@@ -22,7 +22,7 @@ public class RoverTest {
 
     @Test
     @Parameters({
-            ("1 2 N, R, 1 2 E"),
+            ("0 0 N, R, 0 0 E"),
             ("1 2 N, RR, 1 2 S"),
             ("1 2 N, RRR, 1 2 W"),
             ("1 2 N, RRRR, 1 2 N")
@@ -44,6 +44,30 @@ public class RoverTest {
                                    String commands,
                                    String finalPosition){
         assertThat(rover.explore(initialPosition,commands), is(finalPosition));
+    }
+
+    @Test
+    @Parameters({
+            ("1 2 N, M, 1 3 N"),
+            ("1 2 N, MM, 1 4 N"),
+            ("1 2 N, MMMM, 1 6 N")
+    })
+    public void should_move_up(String initialPosition,
+                               String commands,
+                               String finalPosition){
+        assertThat(rover.explore(initialPosition, commands), is(finalPosition));
+    }
+
+    @Test
+    @Parameters({
+            ("3 3 S, M, 3 2 S"),
+            ("1 3 S, MM, 1 1 S"),
+            ("2 4 S, MMM, 2 1 S")
+    })
+    public void should_move_down(String initialPosition,
+                               String commands,
+                               String finalPosition){
+        assertThat(rover.explore(initialPosition, commands), is(finalPosition));
     }
 
 }
