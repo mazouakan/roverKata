@@ -47,9 +47,17 @@ Expected Output:
 
 5 1 E
 
+NOTE ON PROBLEM STATEMENT
+-------------------------
+
+The problem does not describe what do if a Rover
+hits the edges or another Rover. There are several ways to handle this. I
+chose to skip the current command and execute the next commands and report its position. 
 
 COMMAND LINE:
 
 The program will be runned with this command line:
 
  	java -jar rover.jar input.txt
+
+the file "input.txt" should be put in the same folder as the rover.jar.

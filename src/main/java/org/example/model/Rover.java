@@ -12,6 +12,10 @@ public class Rover {
         this.grid = grid;
     }
 
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
     public String explore(String initialPosition, String commands) {
 
         String currentPosition = initialPosition;
@@ -27,6 +31,7 @@ public class Rover {
             }
             if(c == 'M'){
                 position = grid.nextPosition(position);
+                this.coordinate = position.getCoordinate();
 
             }
         }
