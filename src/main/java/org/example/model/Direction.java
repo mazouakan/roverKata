@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public enum Direction{
     NORTH('W','N','E'),
